@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/reset.css" />
+    <link rel="stylesheet" type="text/css" href="./css/reset.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <!-- 小圖示 -->
@@ -22,70 +22,110 @@
     <style>
         body {
             font-family: 'Faustina', serif;
-            background-image: url(./image/bcc.png);
+            background-image: url(./img/nav_bcc.png);
+        }
+
+        p{
+            margin: 0;
         }
 
 
 
-        nav {
+        /* burgurBar */
+        .nav_burgurBar{
+            background-image: url(./img/nav_bcc.png);
+            position: sticky;
+            top: 0;
+            display: none;
+            z-index: 9;
+            padding: 20px 0;
+
+            border-bottom: 1px solid rgba(203, 203, 203, .5);
+        }
+        .nav_burgurBar_img {
+            margin: 0 20px;
+        }
+
+        .nav_logo_mobile{
+            margin: 0 10px;
+        }
+
+
+/* overlayNav */
+        .nav_overlayNav {
+            background-color: rgba(0, 0, 0, 0.9);
             width: 100%;
-            background-image: url(./image/navbar-bcc.jpg);
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 99;
+            /* display: none; */
+            transition: .7s;
+
+            transform: translateY(-2500px);
+        }
+
+        .nav_overlayNavBox {
+            text-align: center;
+        }
+
+        .nav_overlayNavBox li {
+            font-family: 'Noto Serif TC', serif;
+            color: #fff;
+            letter-spacing: 0.2rem;
+            padding: 25px 0;
+        }
+
+
+
+
+/* navbar */
+        .nav_navbar_com {
+            width: 100%;
+            background-image: url(./img/nav_barBcc.jpg);
 
             position: fixed;
             top: 0;
             z-index: 99;
-
-            /* border: 1px solid red; */
         }
 
-        .navbar {
+        .nav_navbar_com_container {
             width: 90%;
             display: flex;
             margin: 10px auto;
             padding: 0;
-
-
-            /* border: 1px solid red; */
         }
 
-        .index_navbar {
+        .nav_navbar {
             width: 94%;
             display: flex;
             align-items: center;
-
-
-            /* border: 1px solid red; */
         }
 
-        .navBox {
+        .nav_navbarBox {
             width: 100%;
             display: flex;
             justify-content: space-around;
             align-items: center;
-
-            /* border: 1px solid red; */
         }
 
-        .index_nav_left {
+        .nav_nav_left {
             width: 70%;
             display: flex;
             justify-content: space-between;
             list-style-type: none;
             margin: 0px;
-            /* border: 1px solid red; */
         }
 
-        .index_nav_right {
-            /* width: 100%; */
+        .nav_nav_right {
             display: flex;
             justify-content: flex-end;
             list-style-type: none;
             margin: 0;
-
-            /* border: 1px solid red; */
         }
 
-        .navBox li {
+        .nav_navbarBox li {
             font-family: 'Noto Serif TC', serif;
             font-size: 16px;
             color: #000;
@@ -93,26 +133,27 @@
             position: relative;
             bottom: 0;
             transition: .5s;
-
-            /* border: 1px solid red; */
         }
 
-        .navBox li:hover {
+        .nav_navbarBox li:hover {
             color: #cc543a;
             bottom: 10px;
-
         }
 
-        .navBox span {
+        .nav_nav_left li{
+            width: 77px;
+        }
+
+        .nav_navbarBox span {
             padding: 0 10px;
         }
 
-        .navBox a,
-        .index_overlayNavBox a {
+        .nav_navbarBox a,
+        .nav_overlayNavBox a {
             text-decoration: none;
         }
 
-        .navline {
+        .nav_navline {
             width: 80%;
             height: 1px;
             background-color: rgba(203, 203, 203, .7);
@@ -124,6 +165,113 @@
             width: 6%;
         }
 
+        .nav_news::before{
+            content: "最新消息";
+        }
+        .nav_news:hover::before{
+            content: "NEWS";
+        }
+        .nav_explore::before{
+            content: "探索灣廟";
+        }
+        .nav_explore:hover::before{
+            content: "EXPLORE";
+        }
+        .nav_serv::before{
+            content: "線上服務";
+        }
+        .nav_serv:hover::before{
+            content: "SERVICE";
+        }
+        .nav_trip::before{
+            content: "聖地巡禮";
+        }
+        .nav_trip:hover::before{
+            content: "TRIP";
+        }
+        .nav_shop::before{
+            content: "祈福商店";
+        }
+        .nav_shop:hover::before{
+            content: "SHOP";
+        }
+        .nav_cart::before{
+            content: "購物車";
+        }
+        .nav_cart:hover::before{
+            content: "CART";
+        }
+
+
+
+
+/* login */
+.modal-content-re {
+            background-image: url(./img/nav_bcc2.png);
+            border: 0;
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .modal-header-re {
+            border-bottom: 0px;
+            display: block;
+            text-align: center;
+        }
+
+        .modal-footer-re {
+            border-top: 0px;
+            margin: 0 auto;
+        }
+
+        .modal-footer2-re {
+            margin: 0 auto;
+            font-size: 14px;
+            color: #000;
+        }
+
+        .modal-footer2-re a {
+            color: #000;
+        }
+
+        .form-control-re {
+            background-image: url(./img/nav_bcc.png);
+            border-radius: 0%;
+            border: 1px solid #cdcdcd;
+        }
+
+        .form-control-re:focus {
+            border-color: #cdcdcd;
+            box-shadow: none;
+            background-color: #f5f4f1;
+        }
+
+        .close:focus {
+            outline: none;
+        }
+
+        .btn-primary-re {
+            background-color: #cc543a;
+            border: 0;
+            border-radius: 33px;
+            padding: 5px 35px;
+        }
+
+        .btn-primary-re:hover {
+            background-color: #dd745e;
+        }
+
+        .btn-primary-re:active {
+            background-color: #dd745e;
+        }
+
+        .btn-primary-re:focus {
+            background-color: #dd745e;
+        }
+
+
+    
+    /* news */
         .news_content {
             display: flex;
             width: 80%;
@@ -143,20 +291,33 @@
 
         .news_box {
             display: flex;
-            width: 80%;
+            width: 85%;
             justify-content: space-between;
             margin: 0 0 50px 0;
 
-            /* border: 1px solid red; */
+            position: relative;
         }
+
+        @keyframes slide {
+            from{
+                bottom: -80px;
+                opacity: 0;
+            }
+            to{
+                bottom: 0;
+                opacity: 1;
+            }
+        }
+
+        .hideme{
+            opacity: 0;
+        }
+
 
         .news_mainImg {
             width: 350px;
             height: 350px;
             overflow: hidden;
-
-
-            /* border: 1px solid red; */
         }
 
         .news_mainImg img {
@@ -165,6 +326,7 @@
 
         .news_mainWordBox {
             width: 65%;
+            padding: 0 0 0 18px;
 
             /* border: 1px solid red; */
         }
@@ -190,44 +352,195 @@
 
         .news_moreLink {
             margin: 20px 0 0 0;
+            color: #cc543a;
+        }
+        .news_moreLink a{
+            color: #cc543a;
+            font-weight: 600;
+        }
+
+/* Page */
+        .news_slidePage{
+            margin: 80px 0 40px 0;
+        }
+        .trip_page-item {
+            color: #707070;
+            font-size: 24px;
+        }
+
+        .trip_page-item:hover {
+            background-color: #c0c0c0;
+            color: #FFF;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+/* goTop */
+        .index_goTopImg {
+            width: 50px;
+            position: fixed;
+            bottom: -100px;
+            right: 20px;
+            transition: .5s;
+            z-index: 9;
+        }
+
+        .index_goTopImg svg {
+            width: 100%;
+        }
+
+        .index_goTopImg.show {
+            bottom: 20px;
+        }
+
+        footer {
+            width: 100%;
+            height: 70px;
+            background-color: #cc543a;
+            color: white;
+            letter-spacing: 3px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        @media (max-width: 770px){
+
+        /* nav */
+            .nav_burgurBar {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .nav_navbar_com {
+                display: none;
+            }
+
+            .nav_overlayNav {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .news_content{
+                flex-direction: column;
+                align-items: center;
+                margin-top: 30px;
+            }
+            .news_pageTitle{
+                margin-bottom: 30px;
+            }
+            .news_box{
+                width: 100%;
+                flex-direction: column;
+            }
+
+            .news_mainWordBox{
+                width: 100%;
+                padding: 0;
+            }
+
+            .news_subContent, .news_moreLink{
+                display: none;
+            }
         }
     </style>
 </head>
 
 <body>
-    <nav>
-        <div class="navbar">
-            <!-- 請依檔案位置修改logo路徑 -->
-            <img src='/svg/logo.svg'>
+    <div class="nav_burgurBar">
+        <div class="nav_burgurBar_img">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="20" viewBox="0 0 25 20">
+                <g id="Group_135" data-name="Group 135" transform="translate(-341.5 -1313.5)">
+                    <line id="Line_50" data-name="Line 50" x2="23" transform="translate(342.5 1314.5)" fill="none"
+                        stroke="#707070" stroke-linecap="round" stroke-width="2" />
+                    <line id="Line_51" data-name="Line 51" x2="23" transform="translate(342.5 1323.5)" fill="none"
+                        stroke="#707070" stroke-linecap="round" stroke-width="2" />
+                    <line id="Line_52" data-name="Line 52" x2="23" transform="translate(342.5 1332.5)" fill="none"
+                        stroke="#707070" stroke-linecap="round" stroke-width="2" />
+                </g>
+            </svg>
+        </div>
+        
+        <div class="nav_logo_mobile">
+            <img src="./img/nav_logo_mobile.svg" alt="">
+        </div>
 
-            <div class="index_navbar">
-                <div class="navBox">
-                    <ul class="index_nav_left">
+    </div>
+
+    <div class="nav_overlayNav">
+        <div class="nav_closeBtn mb-4">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 20 20">
+                <title>close</title>
+                <path fill='#fff'
+                    d="M10 8.586l-7.071-7.071-1.414 1.414 7.071 7.071-7.071 7.071 1.414 1.414 7.071-7.071 7.071 7.071 1.414-1.414-7.071-7.071 7.071-7.071-1.414-1.414-7.071 7.071z">
+                </path>
+            </svg>
+        </div>
+        <div class="nav_overlayNavBox">
+            <ul>
+                <a href="">
+                    <li>最新消息</li>
+                </a>
+                <a href="">
+                    <li>探索灣廟</li>
+                </a>
+                <a href="">
+                    <li>線上服務</li>
+                </a>
+                <a href="">
+                    <li>聖地巡禮</li>
+                </a>
+                <a href="">
+                    <li>祈福商店</li>
+                </a>
+                <a href="">
+                    <li>購物車</li>
+                </a>
+                <a href="" data-toggle="modal" data-target="#loginCenter">
+                    <li>登入 | 註冊</li>
+                </a>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 電腦螢幕大小的navbar -->
+    <nav class="nav_navbar_com">
+        <div class="nav_navbar_com_container">
+            <!-- 請依檔案位置修改logo路徑 -->
+            <img src='./img/nav_logo.svg'>
+
+            <div class="nav_navbar">
+                <div class="nav_navbarBox">
+                    <ul class="nav_nav_left">
                         <a href="">
-                            <li class="nav_news">最新消息</li>
+                            <li class="nav_news"></li>
                         </a>
                         <a href="">
-                            <li>探索灣廟</li>
+                            <li class="nav_explore"></li>
                         </a>
                         <a href="">
-                            <li>線上服務</li>
+                            <li class="nav_serv"></li>
                         </a>
                         <a href="">
-                            <li>聖地巡禮</li>
+                            <li class="nav_trip"></li>
                         </a>
                         <a href="">
-                            <li>祈福商店</li>
+                            <li class="nav_shop"></li>
                         </a>
                         <a href="">
-                            <li>購物車</li>
+                            <li class="nav_cart"></li>
                         </a>
                     </ul>
-                    <ul class="index_nav_right">
-                        <a href="" data-toggle="modal" data-target="#exampleModalCenter">
+                    <ul class="nav_nav_right">
+                        <a href="" data-toggle="modal" data-target="#loginCenter">
                             <li>登入</li>
                         </a>
                         <span>|</span>
-                        <a href="">
+                        <a href="" data-toggle="modal" data-target="#registerCenter">
                             <li>註冊</li>
                         </a>
                     </ul>
@@ -236,8 +549,101 @@
 
         </div>
 
-        <hr class="navline">
+        <hr class="nav_navline">
     </nav>
+
+    <!-- login -->
+    <div class="modal fade" id="loginCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content modal-content-re">
+                <div class="modal-header modal-header-re">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h5 class="modal-title" id="exampleModalCenterTitle">登入 | LOGIN</h5>
+                </div>
+                <div class="modal-body">
+                    <form class="mt-3">
+                        <div class="form-group mb-3">
+                            <input type="text" class="form-control form-control-re" id="account-name" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control form-control-re" id="password-text" placeholder="Password">
+                        </div>
+                        <input type="checkbox"> 記住帳號
+                    </form>
+                </div>
+                <div class="modal-footer modal-footer-re">
+                    <button type="button" class="btn btn-primary btn-primary-re">登入</button>
+                </div>
+                <div class="modal-footer2-re mt-3">
+                    <a class="mr-5" data-toggle="modal" data-target="#lostPassword" id="passwordbtn">忘記密碼</a>
+                    <a data-toggle="modal" data-target="#registerCenter" id="registerbtn">註冊帳號</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- lost password -->
+    <div class="modal fade" id="lostPassword" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content modal-content-re">
+                <div class="modal-header modal-header-re">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h5 class="modal-title" id="exampleModalCenterTitle">找回密碼</h5>
+                </div>
+                <div class="modal-body">
+                    <form class="mt-3">
+                        <div class="form-group mb-3">
+                            <p>請輸入您註冊的電子郵件，您將會在電子郵件信箱中收到重設密碼的連結。</p>
+                            <input type="text" class="form-control form-control-re" id="account-name" placeholder="Email">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer modal-footer-re">
+                    <button type="button" class="btn btn-primary btn-primary-re">送出</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- register -->
+    <div class="modal fade" id="registerCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content modal-content-re">
+                <div class="modal-header modal-header-re">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h5 class="modal-title" id="exampleModalCenterTitle">註冊 | REGISTER</h5>
+                </div>
+                <div class="modal-body">
+                    <form class="mt-3">
+                        <div class="form-group mb-3">
+                            <input type="text" class="form-control form-control-re" id="account-name" placeholder="User Name">
+                        </div>
+                        <div class="form-group mb-3">
+                            <input type="text" class="form-control form-control-re" id="account-name" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control form-control-re" id="password-text" placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control form-control-re" id="password-text" placeholder="Repeat Password">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer modal-footer-re">
+                    <button type="button" class="btn btn-primary btn-primary-re">註冊</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="news_path"></div>
 
@@ -246,7 +652,7 @@
         <div class="news_area">
             <div class="news_box">
                 <div class="news_mainImg">
-                    <img src="./image/news_mainImg(8).jpg" alt="">
+                    <img src="./img/news_mainImg(8).jpg" alt="">
                 </div>
                 <div class="news_mainWordBox">
                     <div class="news_date">Jun 23, 2021</div>
@@ -261,7 +667,7 @@
 
             <div class="news_box">
                 <div class="news_mainImg">
-                    <img src="./image/news_mainImg(1).jpg" alt="">
+                    <img src="./img/news_mainImg(1).jpg" alt="">
                 </div>
                 <div class="news_mainWordBox">
                     <div class="news_date">Jun 17, 2021</div>
@@ -274,38 +680,178 @@
                 </div>
             </div>
 
-            <div class="news_box">
+            <div class="news_box hideme">
                 <div class="news_mainImg">
-                    <img src="./image/news_mainImg(5).jpg" alt="">
+                    <img src="./img/news_mainImg(5).jpg" alt="">
                 </div>
                 <div class="news_mainWordBox">
-                    <div class="news_date">Jun 23, 2021</div>
-                    <div class="news_title">2021廟宇國際觀光文化節 攝影比賽</div>
+                    <div class="news_date">Jun 11, 2021</div>
+                    <div class="news_title">統一獅打造宮廟主題日 台南3大廟共襄盛舉</div>
                     <div class="news_subContent">
-                        以2021年大甲媽國際觀光文化節為主題，展現台灣人對宗教文化的獨特傳統熱情，在遶境活動上不斷的創新，表達信仰的內涵和力量，永續傳承大甲媽祖慈愛的精神，關懷弱勢、創建社會福利的精神。</div>
+                        統一7-ELEVEN獅五月中旬將推出「統一獅Ｘ廟宇季 有球必應」主題活動，結合臺南最具指標性的廟宇文化，共創職棒新風潮。</div>
                     <div class="news_moreLink">
                         <a href="">Read More+</a>
                     </div>
                 </div>
             </div>
 
-            <div class="news_box">
+            <div class="news_box hideme">
                 <div class="news_mainImg">
-                    <img src="./image/news_mainImg(3).jpg" alt="">
+                    <img src="./img/news_mainImg(2).jpg" alt="">
                 </div>
                 <div class="news_mainWordBox">
-                    <div class="news_date">Jun 23, 2021</div>
-                    <div class="news_title">2021廟宇國際觀光文化節 攝影比賽</div>
+                    <div class="news_date">Jun 02, 2021</div>
+                    <div class="news_title">各地最新禪修活動報名</div>
                     <div class="news_subContent">
-                        以2021年大甲媽國際觀光文化節為主題，展現台灣人對宗教文化的獨特傳統熱情，在遶境活動上不斷的創新，表達信仰的內涵和力量，永續傳承大甲媽祖慈愛的精神，關懷弱勢、創建社會福利的精神。</div>
+                        禪修將禪修心法融入健身運動之中，發展出來簡單易學且對身心平衡有相當幫助的禪修方法，讓緊張忙碌的現代人，能夠輕鬆簡便地享受禪法的奧妙。</div>
                     <div class="news_moreLink">
                         <a href="">Read More+</a>
                     </div>
                 </div>
+            </div>
+
+            <div class="news_box hideme">
+                <div class="news_mainImg">
+                    <img src="./img/news_mainImg(3).jpg" alt="">
+                </div>
+                <div class="news_mainWordBox">
+                    <div class="news_date">Jun 02, 2021</div>
+                    <div class="news_title">各地最新禪修活動報名</div>
+                    <div class="news_subContent">
+                        禪修將禪修心法融入健身運動之中，發展出來簡單易學且對身心平衡有相當幫助的禪修方法，讓緊張忙碌的現代人，能夠輕鬆簡便地享受禪法的奧妙。</div>
+                    <div class="news_moreLink">
+                        <a href="">Read More+</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="news_slidePage">
+                <nav class="trip_page position-relative d-flex justify-content-end" aria-label="Page navigation example">
+                    <ul class="pagination ">
+                        <li class="page-item"><a class="page-link trip_page-item" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link trip_page-item" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link trip_page-item" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link trip_page-item" href="#">4</a></li>
+                        <li class="page-item"><a class="page-link trip_page-item" href="#">></a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </div>
 
+    <!-- go-Top -->
+    <div class="index_goTop d-flex justify-content-end">
+        <div class="index_goTopImg">
+            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+                <g id="Group_81" data-name="Group 81" transform="translate(-1810 -2767)">
+                    <g id="Ellipse_2" data-name="Ellipse 2" transform="translate(1810 2767)" fill="#fff"
+                        stroke="#535353" stroke-width="1" opacity="0.8">
+                        <circle cx="40" cy="40" r="40" stroke="none" />
+                        <circle cx="40" cy="40" r="39.5" fill="none" />
+                    </g>
+                    <g id="Group_30" data-name="Group 30" transform="translate(-1630.25 4496) rotate(-90)">
+                        <path id="Path_3" data-name="Path 3" d="M0,0H35" transform="translate(1671.5 3480.25)"
+                            fill="none" stroke="#2d2a2a" stroke-linecap="round" stroke-width="2" />
+                        <line id="Line_39" data-name="Line 39" x1="9.333" y1="8.75"
+                            transform="translate(1697.167 3471.5)" fill="none" stroke="#2d2a2a" stroke-linecap="round"
+                            stroke-width="2" />
+                        <line id="Line_40" data-name="Line 40" x1="9.333" y2="8.75"
+                            transform="translate(1697.167 3480.25)" fill="none" stroke="#2d2a2a" stroke-linecap="round"
+                            stroke-width="2" />
+                    </g>
+                </g>
+            </svg>
+        </div>
+    </div>
+
+    <footer>
+        <p>Copyright© TempleTrip.tw</p>
+    </footer>
+
+
+
+    
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"
+    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+<script>
+
+    // overlayNav進場
+    $('.nav_burgurBar_img').click(function () {
+
+        let navPosition = {
+            transform: 'translateY(0)'
+        }
+
+        $(".nav_overlayNav").css(navPosition);
+        })
+
+        // overlayNav退場
+        $('.nav_closeBtn').click(function () {
+
+        let navPosition = {
+            transform: 'translateY(-2500px)',
+            transition: '.7s'
+        }
+
+        $(".nav_overlayNav").css(navPosition);
+        })
+
+
+        //Login hide
+        $('#registerbtn').click(function () {
+            $('#loginCenter').modal('hide');
+        })
+
+        $('#passwordbtn').click(function () {
+            $('#loginCenter').modal('hide');
+    })
+
+    //滑動出現
+    $(window).scroll(function(){
+        // console.log('height',$(this).scrollTop());
+
+        $('.hideme').each(function(){
+            let bottom_of_object = $(this).offset().top + 150;
+            let bottom_of_window = $(window).scrollTop() + $(window).height();
+
+            if( bottom_of_window > bottom_of_object ){
+                $(this).animate({'opacity':'1'},1300);
+            }
+        }); 
+    });
+
+    //一開始就滑上來
+    $(document).ready(function(){
+        
+        $('.news_box').css('animation', 'slide 1.3s ease-in');
+
+    });   
+
+
+    // Go-Top
+    $(window).scroll(function (event) {
+                let scrollTop = $(window).scrollTop();
+                console.log(scrollTop);
+
+                if (scrollTop >= 500) {
+
+                    $(".index_goTopImg").addClass('show');
+                } else {
+                    $(".index_goTopImg").removeClass('show');
+                }
+            });
+
+    $('.index_goTopImg').click(function () {
+        $("html,body").animate({
+            scrollTop: 0,
+        }, 700);
+    });
+    
+</script>
 </body>
 
 </html>
