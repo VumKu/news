@@ -31,7 +31,7 @@
 
 
 
-        /* burgurBar */
+/* burgurBar */
         .nav_burgurBar{
             background-image: url(./img/nav_bcc.png);
             position: sticky;
@@ -84,8 +84,7 @@
         .nav_navbar_com {
             width: 100%;
             background-image: url(./img/nav_barBcc.jpg);
-
-            position: fixed;
+            position: sticky;
             top: 0;
             z-index: 99;
         }
@@ -206,7 +205,7 @@
 
 
 /* login */
-.modal-content-re {
+        .modal-content-re {
             background-image: url(./img/nav_bcc2.png);
             border: 0;
             border-radius: 20px;
@@ -269,13 +268,61 @@
             background-color: #dd745e;
         }
 
+        .breadcrumb_style {
+            background-image: url(./img/nav_background_1.png);
+            /* navbar多厚 就推多少paddding */
+         
+        }
+
+/* 麵包屑 */
+        .breadcrumb_style_1 {
+            padding: 20px 0;
+            align-items: center;
+            margin: auto;
+        }
+
+        .astlyep {
+            font-size: 14px;
+            letter-spacing: 2px;
+            color: #707070;
+            list-style-type: none;
+            text-decoration: none;
+
+        }
+
+        .breadcrumb_style_1 img {
+            height: 10px;
+            width: 10px;
+            margin: 0 10px;
+        }
+
+        /* 桌機用 */
+        @media (min-width:1400px) {
+            .breadcrumb_style {
+                /* navbar多厚 就推多少paddding */
+                /* 玳禎navbar桌機版 無填滿 這邊請填滿105px */
+                /* padding-top: 105px; */
+            }
+            .breadcrumb_style_1 {
+                width: 80%;
+            }
+        }
+
+        /* 手機用 */
+        @media (max-width:1399px) {
+            .breadcrumb_style_1 {
+                /* 手機板寬 自行設定 */
+                width: 90%;
+            }
+        }
+
 
     
     /* news */
         .news_content {
             display: flex;
             width: 80%;
-            margin: 150px auto 0 auto;
+            margin: 20px auto 0 auto;
 
 
             /* border: 1px solid red; */
@@ -300,7 +347,7 @@
 
         @keyframes slide {
             from{
-                bottom: -80px;
+                bottom: -100px;
                 opacity: 0;
             }
             to{
@@ -425,10 +472,11 @@
                 justify-content: center;
             }
 
+            /* news */
             .news_content{
                 flex-direction: column;
                 align-items: center;
-                margin-top: 30px;
+                /* margin-top: 30px; */
             }
             .news_pageTitle{
                 margin-bottom: 30px;
@@ -645,7 +693,15 @@
         </div>
     </div>
 
-    <div class="news_path"></div>
+    <!-- 我是麵包屑-->
+    <div class="breadcrumb_style   backgroundimg_1">
+        <div class="d-flex flex-wrap breadcrumb_style_1 ">
+            <a href="" class="astlyep">首頁</a>
+            <!-- 共用雲端找箭頭icon-->
+            <img src="./img/nav_arrow_right.svg">
+            <a href="" class="astlyep">最新消息</a>
+        </div>
+    </div>
 
     <div class="news_content">
         <div class="news_pageTitle">NEWS</div>
